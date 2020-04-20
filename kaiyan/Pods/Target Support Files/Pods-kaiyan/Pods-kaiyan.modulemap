@@ -1,0 +1,6 @@
+framework module Pods_kaiyan {
+  umbrella header "Pods-kaiyan-umbrella.h"
+
+  export *
+  module * { export * }
+}
