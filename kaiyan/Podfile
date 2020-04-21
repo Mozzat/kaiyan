@@ -6,7 +6,7 @@ target 'kaiyan' do
   use_frameworks!
   pod 'SwiftIcons'
   pod 'SnapKit', '~> 5.0.0'
-
+  pod 'Moya'
   # Pods for kaiyan
 
   target 'kaiyanTests' do

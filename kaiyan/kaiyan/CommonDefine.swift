@@ -14,16 +14,16 @@ let kScreenWidth = UIScreen.main.bounds.size.width
 let kScreenHeight = UIScreen.main.bounds.size.height
 
 ///状态栏
-let kScreenStateH = UIApplication.shared.statusBarFrame.size.height
+let kScreenStateH : CGFloat = UIApplication.shared.statusBarFrame.size.height
 
 ///判断是不是齐刘海
 let isIphoneX = kScreenStateH == 44 ? true : false
 
 ///导航栏高度
-let kNavHeight = kScreenStateH + 44
+let kNavHeight : CGFloat = kScreenStateH + 44
 
 ///底部标签栏高度
-let bottonHeight = isIphoneX ? 34 : 0
+let bottonHeight : CGFloat = isIphoneX ? 34 : 0
 
 ///底部taibbar高度
-let tabBarHeight = bottonHeight + 44
+let tabBarHeight : CGFloat = bottonHeight + 44
