@@ -112,6 +112,8 @@ extension HomeFollowCardCell {
             make.top.equalTo(self.titleLab.snp.bottom).offset(3)
         }
         
+        self.frame.size.height = 240;
+        
     }
     
 }

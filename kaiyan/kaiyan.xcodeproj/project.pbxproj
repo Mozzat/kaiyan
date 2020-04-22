@@ -32,6 +32,11 @@
 		76DA1163244EF46D0064182D /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA1162244EF46D0064182D /* Util.swift */; };
 		76DA1165244EF4880064182D /* UIView+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA1164244EF4880064182D /* UIView+Common.swift */; };
 		76DA1167244F01500064182D /* HomeBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA1166244F01500064182D /* HomeBannerCell.swift */; };
+		76DA1169244FE1D60064182D /* UIImageView+SDWebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA1168244FE1D60064182D /* UIImageView+SDWebImage.swift */; };
+		76DA116B244FE3500064182D /* HomeInfomationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA116A244FE3500064182D /* HomeInfomationCell.swift */; };
+		76DA116D244FF3810064182D /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA116C244FF3810064182D /* UIColor+Theme.swift */; };
+		76DA116F245018390064182D /* HomeTextCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA116E245018390064182D /* HomeTextCardCell.swift */; };
+		76DA117124501C310064182D /* HomeVideoSmallCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA117024501C310064182D /* HomeVideoSmallCardCell.swift */; };
 		D3DC82984945C4555C254008 /* Pods_kaiyan_kaiyanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58179855694D8C993853F9F6 /* Pods_kaiyan_kaiyanUITests.framework */; };
 		EF0476F684D0D7CC5C02D70D /* Pods_kaiyan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E255CFA5AAE2AB38FD19B /* Pods_kaiyan.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +93,11 @@
 		76DA1162244EF46D0064182D /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		76DA1164244EF4880064182D /* UIView+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Common.swift"; sourceTree = "<group>"; };
 		76DA1166244F01500064182D /* HomeBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerCell.swift; sourceTree = "<group>"; };
+		76DA1168244FE1D60064182D /* UIImageView+SDWebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SDWebImage.swift"; sourceTree = "<group>"; };
+		76DA116A244FE3500064182D /* HomeInfomationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfomationCell.swift; sourceTree = "<group>"; };
+		76DA116C244FF3810064182D /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
+		76DA116E245018390064182D /* HomeTextCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTextCardCell.swift; sourceTree = "<group>"; };
+		76DA117024501C310064182D /* HomeVideoSmallCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoSmallCardCell.swift; sourceTree = "<group>"; };
 		8D329A0103B732761B801E75 /* Pods-kaiyan-kaiyanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaiyan-kaiyanUITests.release.xcconfig"; path = "Target Support Files/Pods-kaiyan-kaiyanUITests/Pods-kaiyan-kaiyanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		91B6BC09623EF2CFB6485A28 /* Pods-kaiyanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaiyanTests.debug.xcconfig"; path = "Target Support Files/Pods-kaiyanTests/Pods-kaiyanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		984BBDD5724DB100F024A9ED /* Pods_kaiyanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kaiyanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -338,6 +348,9 @@
 				76DA1157244E9C830064182D /* HomeHeadCell.swift */,
 				76DA115F244EF1140064182D /* HomeFollowCardCell.swift */,
 				76DA1166244F01500064182D /* HomeBannerCell.swift */,
+				76DA116A244FE3500064182D /* HomeInfomationCell.swift */,
+				76DA116E245018390064182D /* HomeTextCardCell.swift */,
+				76DA117024501C310064182D /* HomeVideoSmallCardCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -348,6 +361,8 @@
 				76DA1161244EF44D0064182D /* Util */,
 				76DA115A244E9DA30064182D /* CommonConfig.swift */,
 				76DA1164244EF4880064182D /* UIView+Common.swift */,
+				76DA1168244FE1D60064182D /* UIImageView+SDWebImage.swift */,
+				76DA116C244FF3810064182D /* UIColor+Theme.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -608,6 +623,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				76B0A153244D72B900FF5CA4 /* MineTarBar.swift in Sources */,
+				76DA116D244FF3810064182D /* UIColor+Theme.swift in Sources */,
+				76DA116B244FE3500064182D /* HomeInfomationCell.swift in Sources */,
+				76DA116F245018390064182D /* HomeTextCardCell.swift in Sources */,
 				76DA1167244F01500064182D /* HomeBannerCell.swift in Sources */,
 				764386E7244D5663006EA6E7 /* Follow.swift in Sources */,
 				763F8472244D40060002C1AD /* ViewController.swift in Sources */,
@@ -621,6 +639,8 @@
 				76DA1160244EF1140064182D /* HomeFollowCardCell.swift in Sources */,
 				76B0A15D244D931C00FF5CA4 /* BaseNavigationController.swift in Sources */,
 				76DA1155244E980A0064182D /* HDFullScreenPopGesture.swift in Sources */,
+				76DA1169244FE1D60064182D /* UIImageView+SDWebImage.swift in Sources */,
+				76DA117124501C310064182D /* HomeVideoSmallCardCell.swift in Sources */,
 				764386E3244D55E4006EA6E7 /* Mine.swift in Sources */,
 				764386DC244D558B006EA6E7 /* BaseViewController.swift in Sources */,
 				76DA115B244E9DA30064182D /* CommonConfig.swift in Sources */,

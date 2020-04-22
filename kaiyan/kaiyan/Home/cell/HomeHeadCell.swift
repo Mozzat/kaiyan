@@ -75,6 +75,8 @@ extension HomeHeadCell {
             make.centerY.equalTo(self.leftTitleLab)
         }
         
+        self.frame.size.height = 70;
+        
     }
     
 }

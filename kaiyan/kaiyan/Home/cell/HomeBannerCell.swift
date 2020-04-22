@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeBannerCell: UITableViewCell {
     
@@ -96,6 +97,7 @@ extension HomeBannerCell {
             make.top.equalTo(self.titleLab.snp.bottom).offset(3)
         }
         
+        self.frame.size.height = 240;
     }
     
 }

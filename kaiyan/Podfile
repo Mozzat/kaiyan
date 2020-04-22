@@ -7,6 +7,7 @@ target 'kaiyan' do
   pod 'SwiftIcons'
   pod 'SnapKit', '~> 5.0.0'
   pod 'Moya'
+  pod 'SDWebImage'
   # Pods for kaiyan
 
   target 'kaiyanTests' do
