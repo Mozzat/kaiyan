@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeHeadCell: UITableViewCell {
+class HomeHeadCell: HomeBaseCell {
 
     lazy var leftTitleLab: UILabel = {
         () -> UILabel in
@@ -42,6 +42,15 @@ class HomeHeadCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    override var dataDic: NSDictionary? {
+        didSet {
+            
+            let data1 = dataDic?["data"] as! NSDictionary
+            self.leftTitleLab.text = data1["text"] as? String
+            self.rightLab.text = data1["rightText"] as? String
+        }
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -56,7 +65,9 @@ extension HomeHeadCell {
     func initSubviews() {
         
         self.contentView.addSubview(self.leftTitleLab)
-        self.leftTitleLab.snp_makeConstraints { (make) in
+        self.leftTitleLab.snp.makeConstraints { (make) in
+            
+            make.top.equalTo(self.contentView).offset(15)
             make.left.equalTo(self.contentView).offset(10);
             make.bottom.equalTo(self.contentView).offset(-5);
         }
@@ -64,7 +75,7 @@ extension HomeHeadCell {
         let rightImage = UIImageView.init()
         rightImage.image = UIImage.init(named: "箭头")
         self.contentView.addSubview(rightImage)
-        rightImage.snp_makeConstraints { (make) in
+        rightImage.snp.makeConstraints { (make) in
             make.right.equalTo(self.contentView).offset(-10)
             make.centerY.equalTo(self.leftTitleLab)
         }
@@ -74,9 +85,9 @@ extension HomeHeadCell {
             make.right.equalTo(rightImage.snp.left).offset(-10)
             make.centerY.equalTo(self.leftTitleLab)
         }
-        
-        self.frame.size.height = 70;
-        
+    
     }
     
 }
+
+

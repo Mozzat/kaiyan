@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class HomeBannerCell: UITableViewCell {
+class HomeBannerCell: HomeBaseCell {
     
     lazy var bannerImageV : UIImageView = {
         let bannerImageV = UIImageView.init()
@@ -84,6 +84,7 @@ extension HomeBannerCell {
             make.left.equalTo(self.contentView).offset(10)
             make.top.equalTo(self.bannerImageV.snp_bottomMargin).offset(5)
             make.width.height.equalTo(30)
+            make.bottom.equalTo(self.contentView).offset(-10)
         }
         
         self.contentView.addSubview(self.titleLab)
@@ -96,8 +97,6 @@ extension HomeBannerCell {
             make.left.equalTo(self.titleLab)
             make.top.equalTo(self.titleLab.snp.bottom).offset(3)
         }
-        
-        self.frame.size.height = 240;
     }
     
 }

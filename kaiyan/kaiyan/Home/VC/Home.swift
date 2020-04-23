@@ -17,6 +17,10 @@ class Home: BaseViewController {
         line.backgroundColor = .black
         return line
     }()
+    lazy var tHomeView : HomeView  = {
+        let tHomeView = HomeView.init(frame: CGRect.init(x: kScreenWidth, y: 0, width: kScreenWidth, height: kScreenHeight - tabBarHeight))
+        return tHomeView
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -33,17 +37,6 @@ class Home: BaseViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 ///UI
@@ -115,6 +108,8 @@ extension Home {
             
         }
         topView.addSubview(self.btmLine)
+        
+        bgScrollView.addSubview(self.tHomeView)
         
     }
     

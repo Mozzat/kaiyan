@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeTextCardCell: UITableViewCell {
+class HomeTextCardCell: HomeBaseCell {
 
     lazy var leftTitleLab : UILabel = {
         let titleLab = UILabel.init()
@@ -42,6 +42,7 @@ extension HomeTextCardCell {
         
         self.contentView.addSubview(self.leftTitleLab)
         self.leftTitleLab.snp.makeConstraints { (make) in
+            make.top.equalTo(self.contentView).offset(15)
             make.left.equalTo(self.contentView).offset(10)
             make.bottom.equalTo(self.contentView).offset(-5)
             make.width.lessThanOrEqualTo(200)

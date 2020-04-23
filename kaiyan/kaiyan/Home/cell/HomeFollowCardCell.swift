@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeFollowCardCell: UITableViewCell {
+class HomeFollowCardCell: HomeBaseCell {
     
     ///lazy
     lazy var bannerImageV : UIImageView = {
@@ -67,6 +67,19 @@ class HomeFollowCardCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override var dataDic: NSDictionary? {
+        didSet {
+            print("11111")
+            let data = dataDic?["data"] as? NSDictionary
+            let content = data?["content"] as? NSDictionary
+            let contentData = content?["data"] as? NSDictionary
+            let cover = contentData?["cover"] as? NSDictionary
+            if let url = cover?["feed"] as? String {
+                self.bannerImageV .loadWebImage(url: url, placeHolder: "日历")
+            }
+        }
+    }
 
 }
 
@@ -99,6 +112,7 @@ extension HomeFollowCardCell {
             make.left.equalTo(self.contentView).offset(10)
             make.top.equalTo(self.bannerImageV.snp_bottomMargin).offset(5)
             make.width.height.equalTo(30)
+            make.bottom.equalTo(self.contentView).offset(-10)
         }
         
         self.contentView.addSubview(self.titleLab)
@@ -111,8 +125,6 @@ extension HomeFollowCardCell {
             make.left.equalTo(self.titleLab)
             make.top.equalTo(self.titleLab.snp.bottom).offset(3)
         }
-        
-        self.frame.size.height = 240;
         
     }
     

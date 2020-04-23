@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeInfomationCell: UITableViewCell {
+class HomeInfomationCell: HomeBaseCell {
 
     lazy var backImageV:UIImageView = {
         

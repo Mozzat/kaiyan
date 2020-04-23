@@ -37,6 +37,9 @@
 		76DA116D244FF3810064182D /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA116C244FF3810064182D /* UIColor+Theme.swift */; };
 		76DA116F245018390064182D /* HomeTextCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA116E245018390064182D /* HomeTextCardCell.swift */; };
 		76DA117124501C310064182D /* HomeVideoSmallCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA117024501C310064182D /* HomeVideoSmallCardCell.swift */; };
+		76DA117324516F490064182D /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 76DA117224516F490064182D /* data.json */; };
+		76DA117624518F970064182D /* HomeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA117524518F970064182D /* HomeType.swift */; };
+		76DA1178245192440064182D /* HomeBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DA1177245192440064182D /* HomeBaseCell.swift */; };
 		D3DC82984945C4555C254008 /* Pods_kaiyan_kaiyanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58179855694D8C993853F9F6 /* Pods_kaiyan_kaiyanUITests.framework */; };
 		EF0476F684D0D7CC5C02D70D /* Pods_kaiyan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E255CFA5AAE2AB38FD19B /* Pods_kaiyan.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +101,9 @@
 		76DA116C244FF3810064182D /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		76DA116E245018390064182D /* HomeTextCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTextCardCell.swift; sourceTree = "<group>"; };
 		76DA117024501C310064182D /* HomeVideoSmallCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoSmallCardCell.swift; sourceTree = "<group>"; };
+		76DA117224516F490064182D /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		76DA117524518F970064182D /* HomeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeType.swift; sourceTree = "<group>"; };
+		76DA1177245192440064182D /* HomeBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBaseCell.swift; sourceTree = "<group>"; };
 		8D329A0103B732761B801E75 /* Pods-kaiyan-kaiyanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaiyan-kaiyanUITests.release.xcconfig"; path = "Target Support Files/Pods-kaiyan-kaiyanUITests/Pods-kaiyan-kaiyanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		91B6BC09623EF2CFB6485A28 /* Pods-kaiyanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaiyanTests.debug.xcconfig"; path = "Target Support Files/Pods-kaiyanTests/Pods-kaiyanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		984BBDD5724DB100F024A9ED /* Pods_kaiyanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kaiyanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +226,7 @@
 		763F849D244D44340002C1AD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				76DA117424518F7E0064182D /* key */,
 				76DA115C244EC47C0064182D /* View */,
 				76DA1156244E9C1A0064182D /* cell */,
 				764386DD244D5592006EA6E7 /* VC */,
@@ -351,6 +358,7 @@
 				76DA116A244FE3500064182D /* HomeInfomationCell.swift */,
 				76DA116E245018390064182D /* HomeTextCardCell.swift */,
 				76DA117024501C310064182D /* HomeVideoSmallCardCell.swift */,
+				76DA1177245192440064182D /* HomeBaseCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -363,6 +371,7 @@
 				76DA1164244EF4880064182D /* UIView+Common.swift */,
 				76DA1168244FE1D60064182D /* UIImageView+SDWebImage.swift */,
 				76DA116C244FF3810064182D /* UIColor+Theme.swift */,
+				76DA117224516F490064182D /* data.json */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -381,6 +390,14 @@
 				76DA1162244EF46D0064182D /* Util.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		76DA117424518F7E0064182D /* key */ = {
+			isa = PBXGroup;
+			children = (
+				76DA117524518F970064182D /* HomeType.swift */,
+			);
+			path = key;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,6 +512,7 @@
 				763F847A244D400F0002C1AD /* LaunchScreen.storyboard in Resources */,
 				763F8477244D400F0002C1AD /* Assets.xcassets in Resources */,
 				763F8475244D40060002C1AD /* Main.storyboard in Resources */,
+				76DA117324516F490064182D /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +645,7 @@
 				76DA116B244FE3500064182D /* HomeInfomationCell.swift in Sources */,
 				76DA116F245018390064182D /* HomeTextCardCell.swift in Sources */,
 				76DA1167244F01500064182D /* HomeBannerCell.swift in Sources */,
+				76DA1178245192440064182D /* HomeBaseCell.swift in Sources */,
 				764386E7244D5663006EA6E7 /* Follow.swift in Sources */,
 				763F8472244D40060002C1AD /* ViewController.swift in Sources */,
 				76DA115E244EDCA00064182D /* HomeView.swift in Sources */,
@@ -634,6 +653,7 @@
 				763F846E244D40060002C1AD /* AppDelegate.swift in Sources */,
 				76DA1163244EF46D0064182D /* Util.swift in Sources */,
 				764386EA244D5684006EA6E7 /* Notice.swift in Sources */,
+				76DA117624518F970064182D /* HomeType.swift in Sources */,
 				76DA1158244E9C830064182D /* HomeHeadCell.swift in Sources */,
 				764386E1244D55CD006EA6E7 /* Home.swift in Sources */,
 				76DA1160244EF1140064182D /* HomeFollowCardCell.swift in Sources */,

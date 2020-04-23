@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeVideoSmallCardCell: UITableViewCell {
+class HomeVideoSmallCardCell: HomeBaseCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -75,9 +75,10 @@ extension HomeVideoSmallCardCell {
         self.contentView.addSubview(self.leftImageV)
         self.leftImageV.snp.makeConstraints { (make) in
             
-            make.centerY.equalTo(self.contentView)
+            make.top.equalTo(self.contentView).offset(5)
             make.width.equalTo(120)
             make.height.equalTo(90)
+            make.height.equalTo(self.contentView).offset(5)
             
         }
         

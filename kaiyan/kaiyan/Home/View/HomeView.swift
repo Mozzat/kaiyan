@@ -17,6 +17,9 @@ class HomeView: UIView {
     private let cellId4 = "HomeView4"
     private let cellId5 = "HomeView5"
     private let cellId6 = "HomeView6"
+    private let cellId7 = "HomeView7"
+    var index : Int = 1
+    var data : NSArray?
     lazy var tableView:UITableView = {
         let tableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: kScreenWidth, height: self.frame.size.height), style: .plain)
         tableView.delegate = self;
@@ -29,11 +32,17 @@ class HomeView: UIView {
         tableView.register(HomeInfomationCell.classForCoder(), forCellReuseIdentifier: cellId4)
         tableView.register(HomeTextCardCell.classForCoder(), forCellReuseIdentifier: cellId5)
         tableView.register(HomeVideoSmallCardCell.classForCoder(), forCellReuseIdentifier: cellId6)
-        
+        tableView.register(HomeHeadCell.classForCoder(), forCellReuseIdentifier: cellId7)
+        tableView.estimatedRowHeight = 70;
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.showsVerticalScrollIndicator = false
+        tableView.showsHorizontalScrollIndicator = false
         return tableView
     }()
     override init(frame: CGRect) {
         super.init(frame: frame)
+        initSubviews()
+        loadLocalData()
         
     }
     required init?(coder: NSCoder) {
@@ -45,13 +54,69 @@ class HomeView: UIView {
 
 extension HomeView : UITableViewDelegate,UITableViewDataSource {
     
+    func initSubviews() {
+        self.addSubview(self.tableView)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3;
+        
+        if let count = self.data?.count {
+            return count
+        }
+        
+        return 0;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId1, for: indexPath)
-        return cell
+        
+        var  cell : HomeBaseCell?
+        if let count = self.data?.count {
+            if indexPath.row < count {
+                
+                let dataDic = self.data![indexPath.row] as? NSDictionary
+                let type : String = dataDic?["type"] as! String
+                if type == HomeType.TextCard {
+                    cell = tableView.dequeueReusableCell(withIdentifier: cellId1, for: indexPath) as! HomeHeadCell
+                    cell?.dataDic = dataDic
+                    return cell!
+                } else if type == HomeType.FollowCard {
+                    cell = tableView.dequeueReusableCell(withIdentifier: cellId2, for: indexPath) as! HomeFollowCardCell
+                    cell?.dataDic = dataDic
+                    return cell!
+                } else {
+                    cell = tableView.dequeueReusableCell(withIdentifier: cellId7, for: indexPath) as!
+                        HomeHeadCell
+                    return cell!
+                }
+                
+            }
+        }
+        return cell!
+    }
+    
+}
+
+///data
+extension HomeView {
+    
+    func loadLocalData() {
+        
+        let path = Bundle.main.path(forResource: "data", ofType: ".json")
+        let url = URL.init(fileURLWithPath: path!)
+        if let jsonData = try? Data(contentsOf: url) {
+            do {
+                
+                if let jsonObj:NSDictionary = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions()) as? NSDictionary {
+                 
+                    print(jsonObj)
+                    self.data = jsonObj["itemList"] as? NSArray
+                    self.tableView.reloadData()
+                }
+            } catch let error as NSError {
+                print("解析出错: \(error.localizedDescription)")
+            }
+        }
+        
     }
     
 }
